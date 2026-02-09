@@ -7,7 +7,7 @@
         <h3 class="text-xl font-semibold mb-2">{{ i18n "singleSession" }}</h3>
         <div class="text-4xl font-bold text-[var(--color-accent)] my-4">$50</div>
         <p class="text-[var(--color-body)]/70 mb-6">{{ i18n "singleSessionDesc" }}</p>
-        <a href="https://cal.com/{{ .Site.Params.calcom }}" target="_blank" rel="noopener" class="inline-block bg-[var(--color-primary)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[var(--color-primary)]/90 transition-colors">
+        <a href="https://{{ .Site.Params.calurl }}/{{ .Site.Params.calcom }}" target="_blank" rel="noopener" class="inline-block bg-[var(--color-primary)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[var(--color-primary)]/90 transition-colors">
           {{ i18n "bookSession" }}
         </a>
       </div>
@@ -18,7 +18,7 @@
         <h3 class="text-xl font-semibold mb-2">{{ i18n "packageSession" }}</h3>
         <div class="text-4xl font-bold text-[var(--color-accent)] my-4">$125</div>
         <p class="text-[var(--color-body)]/70 mb-6">{{ i18n "packageSessionDesc" }}</p>
-        <a href="https://cal.com/{{ .Site.Params.calcom }}" target="_blank" rel="noopener" class="inline-block bg-[var(--color-accent)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[var(--color-accent)]/90 transition-colors">
+        <a href="https://{{ .Site.Params.calurl }}/{{ .Site.Params.calcom }}" target="_blank" rel="noopener" class="inline-block bg-[var(--color-accent)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[var(--color-accent)]/90 transition-colors">
           {{ i18n "bookSession" }}
         </a>
       </div>

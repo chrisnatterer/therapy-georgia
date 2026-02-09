@@ -20,7 +20,7 @@ The easiest way to reach me is via WhatsApp. Send a message, and I'll get back t
 You can also book a session directly through my calendar:
 
 <div class="my-8">
-  <iframe src="https://cal.com/therapy-georgia" width="100%" height="700" frameborder="0" class="rounded-xl shadow-md bg-white"></iframe>
+  <iframe src="https://cal.eu/therapy-georgia" width="100%" height="700" frameborder="0" class="rounded-xl shadow-md bg-white"></iframe>
 </div>
 
 ## Location

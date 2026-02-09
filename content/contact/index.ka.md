@@ -20,7 +20,7 @@ type: "page"
 ასევე შეგიძლიათ სესიის დაჯავშნა პირდაპირ ჩემი კალენდრით:
 
 <div class="my-8">
-  <iframe src="https://cal.com/therapy-georgia" width="100%" height="700" frameborder="0" class="rounded-xl shadow-md bg-white"></iframe>
+  <iframe src="https://cal.eu/therapy-georgia" width="100%" height="700" frameborder="0" class="rounded-xl shadow-md bg-white"></iframe>
 </div>
 
 ## მდებარეობა

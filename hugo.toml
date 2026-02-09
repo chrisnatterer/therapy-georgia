@@ -69,5 +69,6 @@ unsafe = true
 [params]
   whatsapp = "995579070205"
   calcom = "therapy-georgia"
+  calurl = "cal.eu"
   email = "hello@therapygeorgia.ge"
   location = "Tbilisi, Georgia"
