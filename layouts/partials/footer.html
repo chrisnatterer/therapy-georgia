@@ -1,0 +1,48 @@
+<footer class="border-t border-[var(--color-border)] mt-0">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {{/* Brand */}}
+      <div>
+        <a href="{{ "/" | relLangURL }}" class="font-['Lora',serif] text-[var(--color-primary)] text-xl">Therapy Georgia</a>
+        <p class="text-base text-[var(--color-muted)] mt-4 leading-relaxed">{{ i18n "footerTagline" }}</p>
+      </div>
+
+      {{/* Quick links */}}
+      <div>
+        <h3 class="text-base font-medium tracking-wide text-[var(--color-primary)] mb-5">{{ i18n "quickLinks" }}</h3>
+        <ul class="space-y-3">
+          {{ range .Site.Menus.main }}
+            <li>
+              <a href="{{ .URL }}" class="text-base text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors">{{ .Name }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      {{/* Contact */}}
+      <div>
+        <h3 class="text-base font-medium tracking-wide text-[var(--color-primary)] mb-5">{{ i18n "getInTouch" }}</h3>
+        <div class="space-y-3 text-base text-[var(--color-muted)]">
+          <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors">
+            +995 579 070 205
+          </a>
+          <p>{{ .Site.Params.location }}</p>
+        </div>
+
+        {{ if .IsTranslated }}
+          <div class="mt-8 pt-5 border-t border-[var(--color-border)]">
+            {{ range .Translations }}
+              <a href="{{ .RelPermalink }}" class="text-base text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors">
+                {{ if eq .Lang "en" }}English{{ else }}ქართული{{ end }}
+              </a>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="border-t border-[var(--color-border)] mt-14 pt-10 text-center text-sm text-[var(--color-muted)]">
+      <p>&copy; {{ now.Format "2006" }} Therapy Georgia</p>
+    </div>
+  </div>
+</footer>

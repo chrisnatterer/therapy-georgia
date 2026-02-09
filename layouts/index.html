@@ -1,0 +1,68 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+
+  {{/* Divider */}}
+  <div class="max-w-6xl mx-auto px-6 md:px-10">
+    <hr class="border-[var(--color-border)]">
+  </div>
+
+  {{/* About / approach section */}}
+  <section class="py-24 md:py-32">
+    <div class="max-w-4xl mx-auto px-6 md:px-10">
+      <div class="prose max-w-none">
+        {{ .Content }}
+      </div>
+      <div class="mt-12">
+        <a href="{{ "/about/" | relLangURL }}" class="text-[var(--color-accent)] tracking-wide hover:text-[var(--color-primary)] transition-colors">
+          {{ i18n "readMore" }} &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {{/* Quote / philosophy */}}
+  <section class="py-20 md:py-32">
+    <div class="max-w-4xl mx-auto px-6 md:px-10 text-center">
+      <blockquote class="text-3xl md:text-5xl font-['Lora',serif] italic text-[var(--color-primary)] leading-snug">
+        {{ i18n "philosophyQuote" }}
+      </blockquote>
+      <cite class="block mt-8 text-base text-[var(--color-muted)] not-italic tracking-wide">
+        {{ i18n "philosophyAttribution" }}
+      </cite>
+    </div>
+  </section>
+
+  {{/* Divider */}}
+  <div class="max-w-6xl mx-auto px-6 md:px-10">
+    <hr class="border-[var(--color-border)]">
+  </div>
+
+  {{/* Recent writing */}}
+  {{ $posts := where .Site.RegularPages "Section" "blog" }}
+  {{ if $posts }}
+  <section class="py-24 md:py-32">
+    <div class="max-w-4xl mx-auto px-6 md:px-10">
+      <h2 class="text-3xl md:text-4xl font-normal mb-14">{{ i18n "recentWriting" }}</h2>
+      {{ range first 3 $posts }}
+        <article class="mb-10 pb-10 border-b border-[var(--color-border)] last:border-0">
+          <h3 class="text-2xl mb-3">
+            <a href="{{ .RelPermalink }}" class="hover:text-[var(--color-accent)] transition-colors">
+              {{ .Title }}
+            </a>
+          </h3>
+          {{ with .Date }}
+            <time class="text-base text-[var(--color-muted)]" datetime="{{ .Format "2006-01-02" }}">
+              {{ .Format "January 2, 2006" }}
+            </time>
+          {{ end }}
+          {{ with .Summary }}
+            <p class="mt-4 text-[var(--color-muted)] leading-relaxed">{{ . | truncate 200 }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ partial "cta.html" . }}
+{{ end }}

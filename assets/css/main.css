@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+@theme {
+  --color-bg: #f0f4ec;
+  --color-primary: #2c4a3e;
+  --color-accent: #5c7a6b;
+  --color-warm: #c0956c;
+  --color-body: #3a3a3a;
+  --color-muted: #6b7c72;
+  --color-card: #fafcf8;
+  --color-border: #dde5d8;
+}
+
+@layer base {
+  body {
+    font-family: "Source Sans 3", "Noto Sans Georgian", system-ui, sans-serif;
+    color: var(--color-body);
+    background-color: var(--color-bg);
+    font-size: 1.3rem;
+    line-height: 1.75;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Lora", "Noto Serif Georgian", Georgia, serif;
+    color: var(--color-primary);
+    line-height: 1.25;
+  }
+
+  p + p {
+    margin-top: 1.25em;
+  }
+
+  .prose {
+    font-size: 1.3rem;
+    line-height: 1.75;
+  }
+
+  .prose h2 {
+    font-family: "Lora", "Noto Serif Georgian", Georgia, serif;
+    font-size: 2.25rem;
+    margin-top: 2.5em;
+    margin-bottom: 0.75em;
+  }
+
+  .prose h3 {
+    font-family: "Lora", "Noto Serif Georgian", Georgia, serif;
+    font-size: 1.65rem;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose a:hover {
+    color: var(--color-primary);
+  }
+
+  .prose ul, .prose ol {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    padding-left: 1.5em;
+  }
+
+  .prose li {
+    margin-top: 0.35em;
+  }
+
+  .prose blockquote {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1.25em;
+    font-style: italic;
+    color: var(--color-muted);
+  }
+
+  .prose hr {
+    border-color: var(--color-border);
+    margin: 3em 0;
+  }
+}

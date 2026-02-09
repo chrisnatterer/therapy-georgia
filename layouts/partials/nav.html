@@ -1,0 +1,67 @@
+<nav class="sticky top-0 z-50 bg-[var(--color-bg)]/95 backdrop-blur-sm border-b border-[var(--color-border)]">
+  <div class="max-w-6xl mx-auto px-6 md:px-10">
+    <div class="flex items-center justify-between h-20 md:h-24">
+      {{/* Logo */}}
+      <a href="{{ "/" | relLangURL }}" class="flex items-center gap-3 text-[var(--color-primary)]">
+        <img src="{{ "images/logo.svg" | relURL }}" alt="Therapy Georgia" class="h-9 w-auto">
+        <span class="font-['Lora',serif] font-medium text-xl tracking-tight">Therapy Georgia</span>
+      </a>
+
+      {{/* Desktop menu */}}
+      <div class="hidden md:flex items-center gap-10">
+        {{ range .Site.Menus.main }}
+          <a href="{{ .URL }}" class="text-base tracking-wide text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors{{ if $.IsMenuCurrent "main" . }} text-[var(--color-primary)] font-medium{{ end }}">
+            {{ .Name }}
+          </a>
+        {{ end }}
+
+        {{/* Language switcher */}}
+        {{ if .IsTranslated }}
+          <span class="text-[var(--color-border)]">|</span>
+          {{ range .Translations }}
+            <a href="{{ .RelPermalink }}" class="text-base text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors">
+              {{ if eq .Lang "en" }}EN{{ else }}KA{{ end }}
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+
+      {{/* Mobile hamburger */}}
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-[var(--color-primary)]" aria-label="Toggle menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+          <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    {{/* Mobile menu */}}
+    <div id="mobile-menu" class="hidden md:hidden pb-6">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" class="block py-3 text-lg text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors{{ if $.IsMenuCurrent "main" . }} text-[var(--color-primary)] font-medium{{ end }}">
+          {{ .Name }}
+        </a>
+      {{ end }}
+      {{ if .IsTranslated }}
+        <div class="pt-4 mt-4 border-t border-[var(--color-border)]">
+          {{ range .Translations }}
+            <a href="{{ .RelPermalink }}" class="text-base text-[var(--color-muted)] hover:text-[var(--color-primary)]">
+              {{ if eq .Lang "en" }}English{{ else }}ქართული{{ end }}
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger-icon');
+    const close = document.getElementById('close-icon');
+    menu.classList.toggle('hidden');
+    hamburger.classList.toggle('hidden');
+    close.classList.toggle('hidden');
+  });
+</script>

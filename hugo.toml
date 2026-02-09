@@ -1,0 +1,73 @@
+baseURL = "https://therapygeorgia.ge"
+title = "Therapy Georgia"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[build.buildStats]
+enable = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en"
+    weight = 1
+    [languages.en.params]
+      description = "Humanistic & Existential Therapy in Tbilisi, Georgia"
+
+    [[languages.en.menus.main]]
+      name = "Home"
+      pageRef = "/"
+      weight = 1
+    [[languages.en.menus.main]]
+      name = "About"
+      pageRef = "/about/"
+      weight = 2
+    [[languages.en.menus.main]]
+      name = "Services"
+      pageRef = "/services/"
+      weight = 3
+    [[languages.en.menus.main]]
+      name = "Blog"
+      pageRef = "/blog/"
+      weight = 4
+    [[languages.en.menus.main]]
+      name = "Contact"
+      pageRef = "/contact/"
+      weight = 5
+
+  [languages.ka]
+    languageName = "ქართული"
+    languageCode = "ka"
+    weight = 2
+    [languages.ka.params]
+      description = "ჰუმანისტური და ეგზისტენციალური თერაპია თბილისში"
+
+    [[languages.ka.menus.main]]
+      name = "მთავარი"
+      pageRef = "/"
+      weight = 1
+    [[languages.ka.menus.main]]
+      name = "ჩემს შესახებ"
+      pageRef = "/about/"
+      weight = 2
+    [[languages.ka.menus.main]]
+      name = "სერვისები"
+      pageRef = "/services/"
+      weight = 3
+    [[languages.ka.menus.main]]
+      name = "ბლოგი"
+      pageRef = "/blog/"
+      weight = 4
+    [[languages.ka.menus.main]]
+      name = "კონტაქტი"
+      pageRef = "/contact/"
+      weight = 5
+
+[params]
+  whatsapp = "995579070205"
+  calcom = "therapy-georgia"
+  email = "hello@therapygeorgia.ge"
+  location = "Tbilisi, Georgia"
